@@ -1,3 +1,5 @@
+//Refresher on chrono from https://www.geeksforgeeks.org/chrono-in-c/
+
 #include <iostream>
 #include <chrono>
 #include <stack>
@@ -9,14 +11,24 @@ void printIt(int , char , char );
 void MoveDisksHelper(stack<int> &, stack<int> &, char , char ) ;
 
 int main() {
-  for (auto numdisks: {3,5,6}) {
-      stack<int> source;
-      stack<int> dest;
-      stack<int> aux;
-      cout << "Numdisks: " << numdisks << endl;
-      moveDisks(numdisks, source, aux, dest);
-      cout << "Moved " << numdisks << " pegs." <<  endl;
-    }
+  for (auto numdisks : { 5,10,15,20,25,30,35 }) 
+{
+    std::chrono::time_point<std::chrono::system_clock> start, end;
+    start = std::chrono::system_clock::now();
+
+    stack<int> source;
+    stack<int> dest;
+    stack<int> aux;
+
+    cout << "Numdisks: " << numdisks << endl;
+    moveDisks(numdisks, source, aux, dest);
+    cout << "Moved " << numdisks << " pegs." << endl;
+
+    end = std::chrono::system_clock::now();
+    std::chrono::duration<double> elapsed_seconds = end - start;
+    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+    std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
+}
     return 0;
 }
 
@@ -81,10 +93,8 @@ void MoveDisksHelper(stack<int> &source, stack<int> &dest, char s, char d) {
 }
 
 void printIt(int disk, char fromPeg, char toPeg) {
-  // Do nothing for timing test, but otherwise
   std::cout<< "Move disk "<<disk
            << "from peg " << fromPeg
            << "to peg " << toPeg << std::endl;
 }
-
 
