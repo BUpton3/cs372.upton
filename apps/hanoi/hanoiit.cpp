@@ -1,4 +1,5 @@
 //Refresher on chrono from https://www.geeksforgeeks.org/chrono-in-c/
+//Utilized code from previous tries at this class. This is the same understanding and way I would have done it before.
 
 #include <iostream>
 #include <chrono>
