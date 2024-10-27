@@ -18,5 +18,10 @@ int main() {
     cout << "Postorder traversal: ";
     tree.postorder();
 
+    cout << "Deleting 28 from Tree. \n";
+    tree.deleteNode(28);
+    cout << "Inorder traversal after deletion: ";
+    tree.inorder();
+    
     return 0;
 }
