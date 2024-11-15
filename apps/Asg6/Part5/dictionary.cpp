@@ -1,6 +1,6 @@
 // Used for help: https://www.geeksforgeeks.org/map-associative-containers-the-c-standard-template-library-stl/
 // Used for help: https://www.geeksforgeeks.org/how-to-create-a-dictionary-in-cpp/
-
+#include "dictionaryclass.hpp"
 #include <iostream>
 #include <map>
 using namespace std;
