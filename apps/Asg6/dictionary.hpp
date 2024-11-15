@@ -9,11 +9,13 @@ template<
 	class T,
 	class Compare = std::less<Key>,
 	class Allocator = std::allocator<std::pair<const Key, T>>
-> class dictionary {
+>	class dictionary {
 	pair(Key, T) : pair;
-
+	T value;
+	Key key;
 	T get(Key key) {
-
+		T val = map.get(key);
+		return val;
 	}
 	void set(Key key, T value) {
 
@@ -31,6 +33,8 @@ template<
 		}
 	}
 	operator[](const Key& key) {
-
+		if (key == other.key)
+			return value < other.value;
+		return key < other.key;
 	}
 };
