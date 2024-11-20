@@ -1,3 +1,5 @@
+//I used Blackbox AI for help as I struggled immensely with this.
+//black box ai helped explain what changes were made and why. It made it much simpler to understand.
 #include <iostream>
 #include <cassert>
 #include <cstddef>
